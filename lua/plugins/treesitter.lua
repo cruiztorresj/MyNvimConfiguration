@@ -8,12 +8,12 @@ local M = {
     config = function()
         local configs = require("nvim-treesitter.configs")
         configs.setup({
-            ensure_installed = { 
+            ensure_installed = {
                 "asm", "awk", "bash", "c", "clojure", "cmake", "commonlisp", "cpp", "css",
                 "csv", "cuda", "eex", "elixir", "elm", "erlang", "go", "hack", "haskell",
-                "heex", "html", "java", "javascript", "json", "julia", "kotlin", 
+                "heex", "html", "java", "javascript", "json", "julia", "kotlin",
                 "lua", "make", "markdown", "mermaid", "nim", "ocaml", "php", "prolog", "python",
-                "racket", "regex", "ruby", "rust", "scala", "scheme", "sql", "vim",
+                "racket", "regex", "ruby", "rust", "scheme", "sql", "vim",
                 "vimdoc", "xml", "yaml", "zig"
             },
             highlight = { enable = true },
