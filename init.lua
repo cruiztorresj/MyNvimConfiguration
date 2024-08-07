@@ -1,8 +1,14 @@
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=4")
-vim.cmd("set softtabstop=4")
-vim.cmd("set shiftwidth=4")
-vim.cmd("set number")
+local opt = vim.opt
+
+opt.number = true
+opt.cursorline = true
+
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
+opt.softtabstop = 4
+opt.autoindent = true
+
+opt.clipboard:append("unnamedplus")
 
 require("config.lazy")
-
