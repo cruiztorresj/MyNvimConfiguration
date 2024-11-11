@@ -1,7 +1,19 @@
 return {
     "neovim/nvim-lspconfig",
+
     config = function()
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+        require("java").setup({
+
+            jdk = {
+
+                auto_install = false,
+            }
+        })
+
+        require('spring_boot').init_lsp_commands()
+
         local lspconfig = require("lspconfig")
 
         lspconfig.bashls.setup({
@@ -22,8 +34,9 @@ return {
         lspconfig.elixirls.setup({
 
 
-            cmd = {"/home/calebjosue/LSPs/elixir-ls/scripts/language_server.sh" };
+            cmd = {"/home/calebjosue/LSPs/elixir-ls/scripts/elixir-ls" };
         })
+
         lspconfig.html.setup({
 
             capabilities = capabilities
@@ -36,14 +49,19 @@ return {
             capabilities = capabilities
         })
 
-        lspconfig.jdtls.setup({})
+        lspconfig.jdtls.setup({
+
+            ["$/progress"] = function(_, result, ctx) end,
+
+             bundles = require("spring_boot").java_extensions(),
+        })
 
         lspconfig.pylyzer.setup({
 
             capabilities = capabilities
         })
 
-        lspconfig.tsserver.setup({
+        lspconfig.ts_ls.setup({
 
             capabilities = capabilities
         })
@@ -69,6 +87,7 @@ return {
                 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
                 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
                 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
+                vim.keymap.set("n", "<leader>e", '<cmd>lua vim.diagnostic.open_float()<CR>', {})
 
             end
         })
