@@ -14,5 +14,7 @@ I am sharing this repository so perhaps people find it useful to base their Nvim
 * Rename `MyNvimConfiguration` to `nvim`.
 
 ## Further reading.
-`Typecraft` YouTube channel.
-`Unknown Koder` YouTube channel.
+The present nvim configuration is heavily based on the content related to nvim made available
+in the following YouTube channels.
+* `Typecraft`.
+* `Unknown Koder`.
